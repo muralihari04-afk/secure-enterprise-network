@@ -1,0 +1,23 @@
+configure terminal
+
+hostname R1 
+
+
+! Configure connection to R2
+interface gigabitEthernet 0/0
+description LINK-TO-R2
+ip address 192.168.99.1 255.255.255.252
+no shutdown
+exit 
+
+
+! Configure OSPF 
+router ospf 1
+router-id 1.1.1.1
+passive-interface gigabitEthernet 0/0
+network 192.168.99.0 0.0.0.3 area 0
+exit
+
+
+end       
+copy running-config startup-config  
