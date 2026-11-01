@@ -8,7 +8,7 @@ The network was designed to demonstrate practical networking and security concep
 
 ## Network Topology
 
-![Network Diagram](diagrams/network-diagram.png)
+<img width="705" height="502" alt="Screenshot 2026-11-01 at 11 33 43 AM" src="https://github.com/user-attachments/assets/ed061da5-652c-4039-b544-a3af49984621" />
 
 ## Technologies and Concepts
 
