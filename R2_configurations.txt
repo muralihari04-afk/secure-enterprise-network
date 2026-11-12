@@ -1,0 +1,35 @@
+enable
+configure terminal
+
+hostname R2
+
+! Connection to R1
+interface gigabitEthernet 0/0
+description LINK-TO-R1
+ip address 192.168.99.2 255.255.255.252
+no shutdown
+exit
+
+! Physical connection to SW1
+interface gigabitEthernet 0/1
+description TRUNK-TO-SW1
+no shutdown
+exit
+
+! VLAN 10 - Employees
+interface gigabitEthernet 0/1.10
+encapsulation dot1Q 10
+ip address 192.168.10.1 255.255.255.0
+exit
+
+! VLAN 20 - Servers
+interface gigabitEthernet 0/1.20
+encapsulation dot1Q 20
+ip address 192.168.20.1 255.255.255.0
+exit
+
+! VLAN 30 - Management
+interface gigabitEthernet 0/1.30
+encapsulation dot1Q 30
+ip address 192.168.30.1 255.255.255.0
+exit
